@@ -34,7 +34,7 @@ class Gimei
     end
 
     def unique(max_retries = 10_000)
-      @unique ||= UniqueGenerator.new(self, max_retries)
+      @unique ||= UniqueGenerator.new(max_retries)
     end
   end
 
