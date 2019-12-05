@@ -179,13 +179,13 @@ describe Gimei do
       end
 
       describe '名前が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceededed例外が発生すること' do
           original_names = Gimei::NAMES
           Gimei::NAMES = {
             'first_name' => { 'male' => [], 'female' => [] },
             'last_name' => []
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.name
           end
           Gimei::NAMES = original_names
@@ -207,13 +207,13 @@ describe Gimei do
       end
 
       describe '名が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceeded例外が発生すること' do
           original_names = Gimei::NAMES
           Gimei::NAMES = {
             'first_name' => { 'male' => [], 'female' => [] },
             'last_name' => []
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.first
           end
           Gimei::NAMES = original_names
@@ -235,13 +235,13 @@ describe Gimei do
       end
 
       describe '姓が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceeded例外が発生すること' do
           original_names = Gimei::NAMES
           Gimei::NAMES = {
             'first_name' => { 'male' => [], 'female' => [] },
             'last_name' => []
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.last
           end
           Gimei::NAMES = original_names
@@ -266,7 +266,7 @@ describe Gimei do
       end
 
       describe '住所が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceeded例外が発生すること' do
           original_addresses = Gimei::ADDRESSES
           Gimei::ADDRESSES = {
             'addresses' => [
@@ -275,7 +275,7 @@ describe Gimei do
               'town' => []
             ]
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.address
           end
           Gimei::ADDRESSES = original_addresses
@@ -300,7 +300,7 @@ describe Gimei do
       end
 
       describe '県が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceeded例外が発生すること' do
           original_addresses = Gimei::ADDRESSES
           Gimei::ADDRESSES = {
             'addresses' => [
@@ -309,7 +309,7 @@ describe Gimei do
               'town' => []
             ]
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.prefecture
           end
           Gimei::ADDRESSES = original_addresses
@@ -334,7 +334,7 @@ describe Gimei do
       end
 
       describe '市区町村が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceeded例外が発生すること' do
           original_addresses = Gimei::ADDRESSES
           Gimei::ADDRESSES = {
             'addresses' => [
@@ -343,7 +343,7 @@ describe Gimei do
               'town' => []
             ]
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.city
           end
           Gimei::ADDRESSES = original_addresses
@@ -368,7 +368,7 @@ describe Gimei do
       end
 
       describe 'その他住所が枯渇したとき' do
-        it 'Gimei::RetryLimitExceed例外が発生すること' do
+        it 'Gimei::RetryLimitExceeded例外が発生すること' do
           original_addresses = Gimei::ADDRESSES
           Gimei::ADDRESSES = {
             'addresses' => [
@@ -377,7 +377,7 @@ describe Gimei do
               'town' => []
             ]
           }
-          assert_raises Gimei::RetryLimitExceed do
+          assert_raises Gimei::RetryLimitExceeded do
             Gimei.unique.town
           end
           Gimei::ADDRESSES = original_addresses
