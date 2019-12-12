@@ -21,12 +21,25 @@ class Gimei
   class << self
     extend Forwardable
 
-    def_delegators :name, :kanji, :hiragana, :katakana, :first, :last, :romaji
     def_delegators Gimei::Name, :male, :female
     def_delegators :address, :prefecture, :city, :town
 
-    def name
-      Name.new
+    def name(gender = nil)
+      Name.new(gender)
+    end
+
+    def first(gender = nil)
+      Name::First.new(gender)
+    end
+
+    def last
+      Name::Last.new
+    end
+
+    %i[kanji hiragana katakana romaji].each do |method_name|
+      define_method(method_name) do |gender = nil|
+        name(gender).public_send(method_name)
+      end
     end
 
     def address
