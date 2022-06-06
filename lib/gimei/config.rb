@@ -5,5 +5,13 @@ class Gimei
     def initialize(rng: Random)
       @rng = rng
     end
+
+    def blacklist
+      @blacklist ||= []
+    end
+
+    def blacklist=(blacklist)
+      @blacklist = Blacklist.generate(blacklist)
+    end
   end
 end
