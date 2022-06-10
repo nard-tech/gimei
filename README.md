@@ -6,7 +6,6 @@
 
 gimei は、日本人の名前や、日本の住所をランダムに返すライブラリです。テストの時などに使います。似たようなライブラリに[faker](https://github.com/stympy/faker)があります。[faker](https://github.com/stympy/faker)はとても優れたライブラリで、多言語対応もしていますが、ふりがな(フリガナ)は流石に対応していません。gimei はふりがな(及びフリガナ)に対応しています。
 
-
 ## 使い方
 
 ### 名前をランダムで返す
@@ -22,10 +21,12 @@ gimei.romaji         #=> "Haruna Saitou"
 gimei.gender         #=> :female
 gimei.male?          #=> false
 gimei.female?        #=> true
+
 gimei.last.kanji     #=> "斎藤"
 gimei.last.hiragana  #=> "さいとう"
 gimei.last.katakana  #=> "サイトウ"
 gimei.last.romaji    #=> "Saitou"
+
 gimei.first.kanji    #=> "陽菜"
 gimei.first.hiragana #=> "はるな"
 gimei.first.katakana #=> "ハルナ"
@@ -69,10 +70,12 @@ Gimei.kanji          #=> "伊藤 結衣"
 Gimei.hiragana       #=> "いとう みさき"
 Gimei.katakana       #=> "タカハシ ユイナ"
 Gimei.romaji         #=> "Miki Obara"
+
 Gimei.last.kanji     #=> "清水"
 Gimei.last.hiragana  #=> "いとう"
 Gimei.last.katakana  #=> "コバヤシ"
 Gimei.last.romaji    #=> "Wakabayashi"
+
 Gimei.first.kanji    #=> "結菜"
 Gimei.first.hiragana #=> "ここあ"
 Gimei.first.katakana #=> "ヤマト"
