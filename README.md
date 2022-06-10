@@ -264,7 +264,9 @@ Gimei.address.kanji #=> "熊本県日進市東場内"
 
 Add this line to your application's Gemfile:
 
-    gem 'gimei'
+```ruby
+gem 'gimei'
+```
 
 And then execute:
 
